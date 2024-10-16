@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guess Game</title>
+        <link href="styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    </head>
+    <body>
+        <div>
+        <h1>Guess <span style="color: aliceblue;">the</span> number</h1>
+        <br>
+        <input type="number" id="guess" placeholder="Enter a no from 1-10" style="border: 1 solid black;border-radius:10%;padding:2%"><br><br>
+        <button onclick="guess_game()" style="background-color: rgba(168, 183, 183, 0.836);padding:2%;border-radius:10%">Play</button>
+        <h1 id="result">You are right/wrong</h1>
+        <p id="score" style="font-weight: bolder;">Score:<span style="color: azure;">10</span></p>
+        <script>
+            var guess=document.getElementById("guess");
+            var result=document.getElementById("result");
+            var score_value=document.getElementById("score")
+            var random1_number=Math.floor(Math.random()*10)+1;
+            var score=10;
+            function guess_game(){
+                var number=guess.value;
+
+                if(number==random1_number){
+                    result.textContent="You win";
+                    alert("You won");
+                    console.log("crt");
+                    score=score+1;
+                    score_value.textContent="Score:"+score;
+                    
+                }
+                else{
+                    result.textContent="You lost!!";
+                    console.log("no");
+                    score=score-1;
+                    score_value.textContent="Score:"+score;
+                    
+                }
+
+                }
+               
+
+
+            
+
+        </script>
+    </div>
+    </body>
+</html>
